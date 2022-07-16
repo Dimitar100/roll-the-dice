@@ -25,7 +25,6 @@ var invs
 var player_loc
 
 func setup_grid():
-	print(player[0])
 	matrix[player[1]][player[0]] = 7
 	var xLoc = 60
 	var yLoc = 60
@@ -90,16 +89,22 @@ func _ready():
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if player[0] != 0:
+			get_node("Player").can_down = true
 			matrix_fields[player[1]][player[0]].visible = true
 			player[0] = player[0]-1
 			matrix_fields[player[1]][player[0]].visible = false
 			get_node("Player").position.y = get_node("Player").position.y - 80
+		else:
+			get_node("Player").can_up = false
 	elif Input.is_action_just_pressed("ui_down"):
 		if player[0] != 6:
+			get_node("Player").can_up = true
 			matrix_fields[player[1]][player[0]].visible = true
 			player[0] = player[0]+1
 			matrix_fields[player[1]][player[0]].visible = false
 			get_node("Player").position.y = get_node("Player").position.y + 80
+		else:
+			get_node("Player").can_down = false
 	elif Input.is_action_just_pressed("ui_right"):
 		if player[1] != 8:
 			matrix_fields[player[1]][player[0]].visible = true
