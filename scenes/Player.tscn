@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/dice/Dice1.png" type="Texture" id=1]
+[ext_resource path="res://assets/dice/Dice6.png" type="Texture" id=2]
+[ext_resource path="res://assets/dice/Dice4.png" type="Texture" id=3]
+[ext_resource path="res://assets/dice/Dice3.png" type="Texture" id=4]
+[ext_resource path="res://assets/dice/Dice2.png" type="Texture" id=5]
+[ext_resource path="res://assets/dice/Dice5.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "2",
+"speed": 5.0
+} ]
+
+[node name="Player" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "6"

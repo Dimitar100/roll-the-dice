@@ -1,31 +1,14 @@
 extends Node2D
 
-var width = 9
-var height = 6
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	var matrix = []
-	for x in range(width):
-		matrix.append([])
-# warning-ignore:unused_variable
-		for y in range(height):
-			matrix[x].append(0)
-	
-	
-	var s = Sprite.new()
-	add_child(s,true)
-	var field = preload("res://assets/field.png")
-	s.set_texture(field)
-	s.position.x = 48
-	s.position.y = 48
-	
-
-	
-
-	
-
-
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
