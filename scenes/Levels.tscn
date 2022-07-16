@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/dice/Dice1.png" type="Texture" id=1]
+[ext_resource path="res://assets/dice/Dice6.png" type="Texture" id=2]
+[ext_resource path="res://assets/dice/Dice4.png" type="Texture" id=3]
+[ext_resource path="res://assets/dice/Dice3.png" type="Texture" id=4]
+[ext_resource path="res://assets/dice/Dice2.png" type="Texture" id=5]
+[ext_resource path="res://assets/dice/Dice5.png" type="Texture" id=6]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned4.png" type="Texture" id=7]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned1.png" type="Texture" id=8]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned6.png" type="Texture" id=9]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned3.png" type="Texture" id=10]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned5.png" type="Texture" id=11]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned2.png" type="Texture" id=12]
+
+[node name="Levels" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LvlBtn" type="TextureButton" parent="."]
+margin_left = -283.0
+margin_top = -32.3484
+margin_right = -218.249
+margin_bottom = 31.6516
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlBtn2" type="TextureButton" parent="."]
+margin_left = -183.0
+margin_top = -32.3484
+margin_right = -118.249
+margin_bottom = 31.6516
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlBtn3" type="TextureButton" parent="."]
+margin_left = -83.0
+margin_top = -32.3484
+margin_right = -18.2487
+margin_bottom = 31.6516
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlBtn4" type="TextureButton" parent="."]
+margin_left = 17.7513
+margin_top = -32.3484
+margin_right = 81.7513
+margin_bottom = 31.6516
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlBtn5" type="TextureButton" parent="."]
+margin_left = 117.751
+margin_top = -32.3484
+margin_right = 181.751
+margin_bottom = 31.6516
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LvlBtn6" type="TextureButton" parent="."]
+margin_left = 217.751
+margin_top = -32.3484
+margin_right = 281.751
+margin_bottom = 31.6516
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

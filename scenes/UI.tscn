@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/dice/Dice6.png" type="Texture" id=1]
+[ext_resource path="res://assets/dice_field_red/Dice_field5.png" type="Texture" id=2]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned3.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/play_btn_normal.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/quit_btn_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/quit_btn_hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/play_btn_hover.png" type="Texture" id=7]
+[ext_resource path="res://QuitBtn.gd" type="Script" id=8]
+[ext_resource path="res://scenes/PlayBrn.gd" type="Script" id=9]
+
+[node name="UI" type="Node2D"]
+
+[node name="PlayBrn" type="TextureButton" parent="."]
+margin_left = 380.0
+margin_top = 200.0
+margin_right = 500.0
+margin_bottom = 300.0
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 7 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitBtn" type="TextureButton" parent="."]
+margin_left = 380.0
+margin_top = 310.0
+margin_right = 512.0
+margin_bottom = 300.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511.376, 302.906 )
+current = true
+
+[node name="Dice3" type="Sprite" parent="."]
+position = Vector2( 903.372, 372.396 )
+rotation = 0.565487
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+
+[node name="Dice2" type="Sprite" parent="."]
+position = Vector2( 755.482, 295.778 )
+rotation = -0.294961
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Dice1" type="Sprite" parent="."]
+position = Vector2( 117.599, 313.596 )
+rotation = 0.34383
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="PlayBrn" to="PlayBrn" method="_on_PlayBrn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="QuitBtn" method="_on_QuitBtn_pressed"]
