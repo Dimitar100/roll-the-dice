@@ -78,15 +78,10 @@ func setup_grid():
 		xLoc = 60
 		
 func turn_dice():
-	if get_node("Player").i == 5:
-		count=1
-	else:
-		count += 1
-	
-	if count-1 == matrix[player[1]][player[0]]:
-		if get_parent().dice1+1 == count-1:
+	if int(get_node("Player").get_node("AnimatedSprite").get_animation()) == matrix[player[1]][player[0]]:
+		if get_parent().dice1+1 ==matrix[player[1]][player[0]]:
 			get_parent().get_node("dice1").play(get_parent().dots[get_parent().dice1+6])
-		if get_parent().dice2+1 == count-1:
+		if get_parent().dice2+1 == matrix[player[1]][player[0]]:
 			get_parent().get_node("dice2").play(get_parent().dots[get_parent().dice2+6])	
 			
 func _ready():
