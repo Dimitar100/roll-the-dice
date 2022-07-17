@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Level1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GridMaker.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://assets/dice_field_turned/Dice_field_turned3.png" type="Texture" id=13]
 [ext_resource path="res://assets/dice_field_turned/Dice_field_turned5.png" type="Texture" id=14]
 [ext_resource path="res://assets/dice_field_turned/Dice_field_turned2.png" type="Texture" id=15]
+[ext_resource path="res://assets/dice_field_turned/Guide_movement.png" type="Texture" id=16]
+[ext_resource path="res://assets/UI/new.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/new_hover.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -93,7 +96,7 @@ dice6_x_y = [ 6, 8 ]
 position = Vector2( 755.89, 513.336 )
 
 [node name="dice2" type="AnimatedSprite" parent="."]
-position = Vector2( -571.627, 1066.9 )
+position = Vector2( -568.059, 1053.82 )
 rotation = -0.174533
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
@@ -101,9 +104,26 @@ animation = "12"
 offset = Vector2( 1024.77, -472.274 )
 
 [node name="dice1" type="AnimatedSprite" parent="."]
-position = Vector2( -744.869, 5.16967 )
+position = Vector2( -741.301, -7.91161 )
 rotation = 0.523599
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "12"
 offset = Vector2( 1024.77, -472.274 )
+
+[node name="Guide" type="Sprite" parent="."]
+position = Vector2( 873.69, 282.737 )
+texture = ExtResource( 16 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 755.502
+margin_top = 448.59
+margin_right = 1011.5
+margin_bottom = 504.59
+texture_normal = ExtResource( 17 )
+texture_hover = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

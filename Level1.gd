@@ -21,3 +21,8 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	pass
+
+
+func _on_TextureButton_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().reload_current_scene()
