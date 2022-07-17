@@ -9,4 +9,4 @@ func _ready():
 
 func _on_QuitLvlBtn_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://scenes/SelectLevel.tscn")
+	get_tree().change_scene("res://scenes/UI.tscn")

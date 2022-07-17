@@ -1,9 +1,83 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Level1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GridMaker.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/folded_dice.png" type="Texture" id=3]
+[ext_resource path="res://assets/dice_field_red/Dice_field6.png" type="Texture" id=3]
 [ext_resource path="res://scenes/QuitLvl.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/dice_field_red/Dice_field3.png" type="Texture" id=5]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned4.png" type="Texture" id=6]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned6.png" type="Texture" id=7]
+[ext_resource path="res://assets/dice_field_red/Dice_field4.png" type="Texture" id=8]
+[ext_resource path="res://assets/dice_field_red/Dice_field2.png" type="Texture" id=9]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned1.png" type="Texture" id=10]
+[ext_resource path="res://assets/dice_field_red/Dice_field5.png" type="Texture" id=11]
+[ext_resource path="res://assets/dice_field_red/Dice_field1.png" type="Texture" id=12]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned3.png" type="Texture" id=13]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned5.png" type="Texture" id=14]
+[ext_resource path="res://assets/dice_field_turned/Dice_field_turned2.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "12",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "11",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "9",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+} ]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,9 +89,21 @@ dice4_x_y = [ 4, 4 ]
 dice5_x_y = [ 2, 7 ]
 dice6_x_y = [ 6, 8 ]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 880, 253 )
-texture = ExtResource( 3 )
-
 [node name="QuitLvl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 755.89, 513.336 )
+
+[node name="dice2" type="AnimatedSprite" parent="."]
+position = Vector2( -571.627, 1066.9 )
+rotation = -0.174533
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "12"
+offset = Vector2( 1024.77, -472.274 )
+
+[node name="dice1" type="AnimatedSprite" parent="."]
+position = Vector2( -744.869, 5.16967 )
+rotation = 0.523599
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "12"
+offset = Vector2( 1024.77, -472.274 )

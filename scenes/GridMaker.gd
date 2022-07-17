@@ -5,6 +5,8 @@ var matrix_fields = []
 var width = 9
 var height = 7
 
+var count = 0;
+
 var field = preload("res://assets/field.png")
 var dice1 = preload("res://assets/dice_field_red/Dice_field1.png")
 var dice2 = preload("res://assets/dice_field_red/Dice_field2.png")
@@ -23,6 +25,14 @@ export var dice6_x_y = [0, 0]
 var player = [6, 0]
 var invs
 var player_loc
+
+func dice_locations(n):
+	var x = randi() % 9
+	var y = randi() % 7
+	if matrix[x][y] == 0:
+		matrix[x][y] = n + 1
+	else:
+		dice_locations(n)
 
 func setup_grid():
 	matrix[player[1]][player[0]] = 7
@@ -66,7 +76,20 @@ func setup_grid():
 		
 		yLoc = yLoc + 80
 		xLoc = 60
-
+		
+func turn_dice():
+	if get_node("Player").i == 5:
+		count=1
+	else:
+		count += 1
+	
+	if count == matrix[player[1]][player[0]]:
+		if get_parent().dice1+1 == count:
+			get_parent().get_node("dice1").play(get_parent().dots[get_parent().dice1+6])
+		if get_parent().dice2+1 == count:
+			get_parent().get_node("dice2").play(get_parent().dots[get_parent().dice2+6])	
+			
+				
 func _ready():
 	for x in range(width):
 		matrix.append([])
@@ -76,12 +99,8 @@ func _ready():
 			matrix[x].append(0)
 			matrix_fields[x].append(0)
 	
-	matrix[dice1_x_y[1]][dice1_x_y[0]] = 1
-	matrix[dice2_x_y[1]][dice2_x_y[0]] = 2
-	matrix[dice3_x_y[1]][dice3_x_y[0]] = 3
-	matrix[dice4_x_y[1]][dice4_x_y[0]] = 4
-	matrix[dice5_x_y[1]][dice5_x_y[0]] = 5
-	matrix[dice6_x_y[1]][dice6_x_y[0]] = 6
+	for n in 6:
+		dice_locations(n)
 	
 	setup_grid()
 
@@ -96,6 +115,7 @@ func _physics_process(_delta):
 			get_node("Player").position.y = get_node("Player").position.y - 80
 		else:
 			get_node("Player").can_up = false
+		turn_dice()
 	elif Input.is_action_just_pressed("ui_down"):
 		if player[0] != 6:
 			get_node("Player").can_up = true
@@ -105,16 +125,18 @@ func _physics_process(_delta):
 			get_node("Player").position.y = get_node("Player").position.y + 80
 		else:
 			get_node("Player").can_down = false
+		turn_dice()
 	elif Input.is_action_just_pressed("ui_right"):
 		if player[1] != 8:
 			matrix_fields[player[1]][player[0]].visible = true
 			player[1] = player[1]+1
 			matrix_fields[player[1]][player[0]].visible = false
 			get_node("Player").position.x = get_node("Player").position.x + 80
+		turn_dice()
 	elif Input.is_action_just_pressed("ui_left"):
 		if player[1] != 0:
 			matrix_fields[player[1]][player[0]].visible = true
 			player[1] = player[1]-1
 			matrix_fields[player[1]][player[0]].visible = false
 			get_node("Player").position.x = get_node("Player").position.x - 80
-		
+		turn_dice()
