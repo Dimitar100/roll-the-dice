@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/casino music no copyright  casino royalty free music  copyright free casino music.mp3-5b7490505b06883690e7775e4dd36680.mp3str"
+
+[deps]
+
+source_file="res://casino music no copyright  casino royalty free music  copyright free casino music.mp3"
+dest_files=[ "res://.import/casino music no copyright  casino royalty free music  copyright free casino music.mp3-5b7490505b06883690e7775e4dd36680.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
